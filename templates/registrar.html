@@ -1,0 +1,58 @@
+{% extends "base_profesor.html" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar horas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/resgistrar.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+{% endblock %}
+
+{% block main %}
+    <main class="main">
+
+        <section class="container">
+
+            <div clas="encabezado">
+                <h2 class="titulo-seccion">Registrar horas</h2>
+                <p class="descripcion">Busca al estudiante para registrar sus horas</p>
+            </div>
+
+            <div class="contenedor_busqueda">
+
+                <input type="text" 
+                id="busqueda" 
+                class="busqueda" 
+                placeholder="Escribe el documento de identidad del estudiante..."
+                autocomplete="off">
+
+            </div>
+
+            <section class="resultados" aria-labelledby="resultados">
+
+                <h3 class="subtitulo" id="t_resultados">Resultados</h3>
+
+                <p class="mensaje-vacio oculto" id="mensajeVacio">
+                    No se encontró ningun estudiante.
+                </p>
+
+                <ul class="lista_estudiantes" id="listaEstudiantes">
+
+                </ul>
+
+            </section>
+
+        </section>
+
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/registrar.js"></script>
+    <script src="/static/js/base.js"></script>
+{% endblock %}
+
+</body>
+</html>

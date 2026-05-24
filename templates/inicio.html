@@ -1,0 +1,83 @@
+{% extends "base_estudiante.html" %}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Estudiantil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/inicio.css">
+  <link rel="stylesheet" href="/static/css/base.css">
+{% endblock %}
+
+{% block main %}
+
+  <main class="main">
+    <div class="content">
+
+      <!-- WELCOME -->
+      <div class="welcome-section">
+        <h1 id="welcome-name">¡Bienvenido, Juan Pérez!</h1>
+        <p id="welcome-sub">Aquí tienes el resumen de tu actividad académica.</p>
+      </div>
+
+      <!-- READONLY NOTICE (student) -->
+      <div class="readonly-notice visible" id="readonly-notice">
+        🔒 Las estadísticas de progreso solo pueden ser modificadas por un Coordinador.
+      </div>
+
+      <!-- HOURS CARD -->
+      <div class="hours-card">
+        <div class="hours-info">
+          <div class="hours-label">Horas completadas</div>
+          <div class="hours-value">
+            <span id="disp-done">20</span> <span>/ <span id="disp-total">80</span> horas</span>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" id="bar-fill"></div>
+            </div>
+            <div class="progress-pct" id="pct-label">25%</div>
+          </div>
+        </div>
+
+        <div class="donut-wrap">
+          <svg class="donut-svg" width="96" height="96" viewBox="0 0 96 96">
+            <defs>
+              <linearGradient id="donut-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3b82f6"/>
+                <stop offset="100%" stop-color="#93c5fd"/>
+              </linearGradient>
+            </defs>
+            <circle class="donut-bg" cx="48" cy="48" r="40"/>
+            <circle class="donut-fill" id="donut-fill" cx="48" cy="48" r="40"/>
+          </svg>
+          <div class="donut-center" id="donut-pct">25%</div>
+        </div>
+      </div>
+
+      <!-- QUICK ACCESS -->
+      <div class="section-title">Accesos rápidos</div>
+      <div class="quick-grid">
+        <div class="quick-card">
+          <div class="quick-icon">📅</div>
+          <h3>Ver proyectos</h3>
+          <p>Explora los proyectos que otorgan horas sociales</p>
+        </div>
+        <div class="quick-card">
+          <div class="quick-icon">🕐</div>
+          <h3>Mis horas</h3>
+          <p>Consulta el seguimiento de tus horas realizadas</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+{% endblock %}
+
+</div>
+
+{% block script %}
+<script src="/static/js/inicio.js"></script>
+<script src="/static/js/base.js"></script>
+{% endblock %}

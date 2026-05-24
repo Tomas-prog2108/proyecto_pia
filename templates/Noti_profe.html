@@ -1,0 +1,78 @@
+{% extends "base_profesor.html" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <title>Notificaciones</title>
+    <link rel="stylesheet" href="/static/css/Noti_profe.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+{% endblock %}
+
+
+{% block main %}
+<main>
+<div class="container">
+
+
+    <!-- Contenido principal -->
+    <div class="main">
+        <div class="header">
+            <h2>Notificaciones</h2>
+            <span class="marcar">Marcar todas como leídas</span>
+        </div>
+
+        <div class="tabs">
+            <span class="active">Todas</span>
+            <span>Sin leer (3)</span>
+            <span>Solicitudes</span>
+            <span>Sistema</span>
+        </div>
+
+        <!-- Notificaciones -->
+        <div class="card">
+            <div class="user">
+                <div class="icon blue"></div>
+                <div>
+                    <div>Juan Pérez se ha inscrito en el proyecto Biblioteca.</div>
+                    <div class="time">Hace 5 minutos</div>
+                </div>
+            </div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="card">
+            <div class="user">
+                <div class="icon green"></div>
+                <div>
+                    <div>María Gómez se ha inscrito en el proyecto Biblioteca.</div>
+                    <div class="time">Hace 10 minutos</div>
+                </div>
+            </div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="card">
+            <div class="user">
+                <div class="icon yellow"></div>
+                <div>
+                    <div>Carlos Ramírez se ha inscrito en el proyecto Biblioteca.</div>
+                    <div class="time">Hace 15 minutos</div>
+                </div>
+            </div>
+            <div class="dot"></div>
+        </div>
+
+    </div>
+
+</div>
+</main>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="/static/js/Noti_profe.js"></script>
+<script src="/static/js/base.js"></script>
+
+{% endblock %}

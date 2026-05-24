@@ -1,0 +1,341 @@
+/* ============================================
+   VARIABLES DE COLOR — TEMA OSCURO (por defecto)
+   ============================================ */
+:root {
+    --fondo-pagina: #111827;
+    --fondo-seccion: #1f2937;
+    --fondo-tarjeta: #374151;
+    --fondo-tabla-header: #2d3748;
+    --fondo-tabla-fila: #1f2937;
+    --fondo-tabla-fila-alt: #263244;
+
+    --texto-principal: #f9fafb;
+    --texto-secundario: #9ca3af;
+    --texto-horas-total: #60a5fa;
+
+    --color-acento: #3b82f6;
+    --color-barra-fondo: #282f3b;
+
+    --borde-color: #374151;
+
+    --badge-aprobado-fondo: #065f46;
+    --badge-aprobado-texto: #6ee7b7;
+    --badge-pendiente-fondo: #78350f;
+    --badge-pendiente-texto: #fcd34d;
+    --badge-revision-fondo: #1e3a5f;
+    --badge-revision-texto: #93c5fd;
+
+    --btn-tema-fondo: #374151;
+    --btn-tema-texto: #f9fafb;
+}
+
+/* ============================================
+   VARIABLES DE COLOR — TEMA CLARO
+   Se activa cuando <body> tiene la clase "tema-claro"
+   ============================================ */
+body.tema-claro {
+    --fondo-pagina: #f3f4f6;
+    --fondo-seccion: #ffffff;
+    --fondo-tarjeta: #e5e7eb;
+    --fondo-tabla-header: #d1d5db;
+    --fondo-tabla-fila: #ffffff;
+    --fondo-tabla-fila-alt: #f9fafb;
+
+    --texto-principal: #111827;
+    --texto-secundario: #6b7280;
+    --texto-horas-total: #2563eb;
+
+    --color-acento: #2563eb;
+    --color-barra-fondo: #d1d5db;
+
+    --borde-color: #d1d5db;
+
+    --badge-aprobado-fondo: #d1fae5;
+    --badge-aprobado-texto: #065f46;
+    --badge-pendiente-fondo: #fef3c7;
+    --badge-pendiente-texto: #92400e;
+    --badge-revision-fondo: #dbeafe;
+    --badge-revision-texto: #1e40af;
+
+    --btn-tema-fondo: #e5e7eb;
+    --btn-tema-texto: #111827;
+}
+
+/* ============================================
+   RESET Y BASE
+   ============================================ */
+
+/* Aplica box-sizing a absolutamente todo */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fondo-pagina);
+    color: var(--texto-principal);
+    font-family: 'Sora', sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+
+    /* Transición suave al cambiar de tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================
+   BOTÓN DE CAMBIO DE TEMA
+   ============================================ */
+
+
+/* ============================================
+   SECCIÓN PRINCIPAL
+   ============================================ */
+.seguimiento {
+    max-width: 700px;      /* No se estira demasiado en pantallas grandes */
+    margin: 0 auto;        /* Centrado horizontal */
+    background-color: var(--fondo-seccion);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--borde-color);
+    margin-top: 3rem;
+    
+}
+
+/* ============================================
+   ENCABEZADO
+   ============================================ */
+.titulo-seccion {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+    margin-bottom: 0.25rem;
+}
+
+.descripcion {
+    font-size: 0.875rem;
+    color: var(--texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   PESTAÑAS DE NAVEGACIÓN
+   ============================================ */
+.pestanas {
+    display: flex;         /* Pone los botones en fila */
+    gap: 0.5rem;           /* Espacio entre ellos */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--borde-color);
+    padding-bottom: 0.5rem;
+}
+
+.pestana {
+    background: none;      /* Sin fondo */
+    border: none;          /* Sin borde */
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: color 0.2s ease;
+}
+
+/* La pestaña activa se ve diferente */
+.pestana.activa {
+    color: var(--color-acento);
+    border-bottom: 2px solid var(--color-acento);
+    font-weight: 600;
+}
+
+/* ============================================
+   TARJETA DE RESUMEN DE HORAS
+   ============================================ */
+.tarjeta-resumen {
+    background-color: var(--fondo-tarjeta);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--borde-color);
+}
+
+.etiqueta-horas {
+    font-size: 0.875rem;
+    color: var(--texto-secundario);
+    margin-bottom: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.fila-horas {
+    display: flex;         /* Pone los números en fila */
+    align-items: baseline; /* Los alinea por la base del texto */
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.horas-completadas {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.separador {
+    font-size: 1.5rem;
+    color: var(--texto-secundario);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.horas-totales {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--texto-horas-total);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.texto-horas {
+    font-size: 1rem;
+    color: var(--texto-secundario);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ============================================
+   BARRA DE PROGRESO
+   ============================================ */
+.contenedor-barra {
+    background-color: var(--color-barra-fondo);
+    border-radius: 999px;  /* Bordes completamente redondeados */
+    height: 10px;
+    width: 100%;
+    overflow: hidden;      /* La barra interior no se sale del contenedor */
+    margin-bottom: 0.5rem;
+}
+
+.barra-progreso {
+    height: 100%;
+    width: 10%;             /* JavaScript cambiará este valor */
+    background-color: var(--color-acento);
+    border-radius: 999px;
+    transition: width 0.6s ease; /* Animación suave al cambiar el ancho */
+}
+
+.porcentaje {
+    font-size: 0.875rem;
+    color: var(--texto-secundario);
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ============================================
+   SUBTÍTULOS
+   ============================================ */
+.subtitulo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+    margin-bottom: 1rem;
+}
+
+/* ============================================
+   TABLA DE ACTIVIDADES
+   ============================================ */
+.tabla-actividades {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio doble entre bordes */
+    font-size: 0.875rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.tabla-actividades th {
+    background-color: var(--fondo-tabla-header);
+    color: var(--texto-secundario);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--borde-color);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.tabla-actividades td {
+    padding: 0.75rem 1rem;
+    color: var(--texto-principal);
+    border-bottom: 1px solid var(--borde-color);
+}
+
+.btn-evidencia {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.btn-evidencia:hover {
+    opacity: 1;
+}
+
+/* Filas alternadas para facilitar la lectura */
+.tabla-actividades tbody tr:nth-child(even) {
+    background-color: var(--fondo-tabla-fila-alt);
+}
+
+.tabla-actividades tbody tr:nth-child(odd) {
+    background-color: var(--fondo-tabla-fila);
+}
+
+/* Efecto hover sobre las filas */
+.tabla-actividades tbody tr:hover {
+    filter: brightness(1.5); /* Las aclara levemente al pasar el mouse */
+}
+
+/* ============================================
+   BADGES DE ESTADO
+   ============================================ */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.badge-aprobado {
+    background-color: var(--badge-aprobado-fondo);
+    color: var(--badge-aprobado-texto);
+}
+
+.badge-pendiente {
+    background-color: var(--badge-pendiente-fondo);
+    color: var(--badge-pendiente-texto);
+}
+
+.badge-revision {
+    background-color: var(--badge-revision-fondo);
+    color: var(--badge-revision-texto);
+}
+
+/* ============================================
+   CLASE UTILITARIA — OCULTAR ELEMENTOS
+   ============================================ */
+.oculto {
+    display: none;  /* El elemento desaparece completamente */
+}
+
+/* ============================================
+   ANIMACIÓN DE ENTRADA
+   ============================================ */
+
+/* Estado INICIAL — invisible y desplazada hacia abajo */
+.seguimiento {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Estado FINAL — visible y en su posición normal */
+.seguimiento.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

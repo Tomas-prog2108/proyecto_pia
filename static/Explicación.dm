@@ -1,0 +1,1 @@
+Normalmente se utiliza para poner otras carpetas como: Carpeta para CSS, Assets, Imagenes

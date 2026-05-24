@@ -1,0 +1,218 @@
+:root {
+    --fondo-pagina: #111827;
+    --fondo-seccion: #1f2937;
+    --fondo-tarjeta: #374151;
+    --fondo-tabla-header: #2d3748;
+    --fondo-tabla-fila: #1f2937;
+    --fondo-tabla-fila-alt: #263244;
+
+    --texto-principal: #f9fafb;
+    --texto-secundario: #9ca3af;
+    --texto-horas-total: #60a5fa;
+
+    --color-acento: #3b82f6;
+    --color-barra-fondo: #282f3b;
+
+    --borde-color: #374151;
+
+    --badge-aprobado-fondo: #065f46;
+    --badge-aprobado-texto: #6ee7b7;
+    --badge-pendiente-fondo: #78350f;
+    --badge-pendiente-texto: #fcd34d;
+    --badge-revision-fondo: #1e3a5f;
+    --badge-revision-texto: #93c5fd;
+
+    --btn-tema-fondo: #374151;
+    --btn-tema-texto: #f9fafb;
+}
+
+/* ============================================
+   VARIABLES DE COLOR — TEMA CLARO
+   Se activa cuando <body> tiene la clase "tema-claro"
+   ============================================ */
+body.tema-claro {
+    --fondo-pagina: #f3f4f6;
+    --fondo-seccion: #ffffff;
+    --fondo-tarjeta: #e5e7eb;
+    --fondo-tabla-header: #d1d5db;
+    --fondo-tabla-fila: #ffffff;
+    --fondo-tabla-fila-alt: #f9fafb;
+
+    --texto-principal: #111827;
+    --texto-secundario: #6b7280;
+    --texto-horas-total: #2563eb;
+
+    --color-acento: #2563eb;
+    --color-barra-fondo: #d1d5db;
+
+    --borde-color: #d1d5db;
+
+    --badge-aprobado-fondo: #d1fae5;
+    --badge-aprobado-texto: #065f46;
+    --badge-pendiente-fondo: #fef3c7;
+    --badge-pendiente-texto: #92400e;
+    --badge-revision-fondo: #dbeafe;
+    --badge-revision-texto: #1e40af;
+
+    --btn-tema-fondo: #e5e7eb;
+    --btn-tema-texto: #111827;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--fondo-pagina);
+    color: var(--texto-principal);
+    font-family: 'Sora', sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container{
+
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--fondo-seccion);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--borde-color);
+    margin-top: 3rem;
+
+}
+
+.titulo-section{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+    margin-bottom: 0.25rem;
+}
+
+.descripcion {
+    font-size: 0.875rem;
+    color: var(--texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.contenedor_busqueda{
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.busqueda{
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--borde-color);
+    background-color: var(--fondo-tarjeta);
+    color: var(--texto-principal);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease0;
+}
+
+.busqueda:focus{
+    border-color: var(--color-acento);
+}
+
+.busqueda::placeholder{
+    color: var(--texto-secundario);
+}
+
+.subtitulo{
+    margin-bottom: 2rem;
+}
+
+.lista_estudiantes{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tarjeta-estudiante{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background-color: var(--fondo-tarjeta);
+    border-radius: 12px;
+    border: 1px solid var(--borde-color);
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease ;
+}
+
+.tarjeta-estudiante:hover{
+    border-color: var(--color-acento);
+    transform: translateX(4px);
+}
+
+.contenedor-avatar-info{
+    display: flex;
+    align-content: center;
+    gap: 1rem;
+}
+
+.avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-acento);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 700;
+    flex-shrink: 0;
+
+}
+
+.nombre-estudiante{
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: var(--texto-principal);
+}
+
+.detalle-estudiante{
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+}
+
+.flecha-tarjeta{
+    font-size: 1rem;
+    color: var(--texto-secundario);
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.mensaje-vacio{
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.mensaje-vacio.oculto{
+    display: none;
+}
+
+.main{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.main.visible{
+    opacity: 1;
+    transform: translateY(0);
+
+}

@@ -1,0 +1,122 @@
+:root{
+    --fondo-pagina: #111827;
+    --text-primary: #e8eaf2;
+    --text-secondary: #8b93b0;
+    --bg-card: #151c2c;
+    --border: rgba(59,130,246,0.12);
+    --shadow-card: 0 2px 12px rgba(59,100,180,0.10);
+    --card-p: #cbd5f5;
+    --datos: #38bdf8;
+    --btn: #2563eb;
+    --btn-hover: #1d4ed8;
+}
+
+body.tema-claro {
+  --fondo-pagina: #f4f7fd;
+  --text-primary: #1e2a45;
+  --text-secondary: #6b7a9e;
+  --bg-card: #e4ecf8;
+  --border: rgba(59,100,180,0.12);
+  --shadow-card: 0 2px 12px rgba(59,100,180,0.10);
+  --card-p: #4a6a9e;
+  --datos: #2b7cc1;
+  --btn: #4a7fd4;
+  --btn-hover: #3a6cbd;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Sora', sans-serif;
+    background-color: var(--fondo-pagina);
+    color: var(--text-primary);
+
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 3rem;
+    margin-top: 3rem;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+
+.card {
+    background-color: var(--bg-card);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    transition: border-color .3s;
+    position: relative; overflow: hidden;
+
+}
+
+
+.card h3 {
+    margin: 0;
+}
+
+.card p {
+    margin: 5px 0 10px;
+    color: var(--card-p);
+}
+
+
+.datos {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.datos span {
+    color: var(--datos);
+}
+
+
+button {
+    background-color: var(--btn);
+    border: none;
+    padding: 10px 15px;
+    color: var(--text-primary);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--btn-hover);
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+/* Estado INICIAL — invisible y desplazada hacia abajo */
+.main {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Estado FINAL — visible y en su posición normal */
+.main.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

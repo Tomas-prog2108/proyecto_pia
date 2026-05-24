@@ -1,0 +1,124 @@
+{% extends "base_estudiante.html" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Horas</title>
+    <link rel="stylesheet" href="/static/css/horas_estudiante.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block main %}
+    <!-- Botón para cambiar entre tema oscuro y claro -->
+
+
+    <!-- main: contenido principal de la página -->
+
+    <main>
+
+
+        <section class="seguimiento" aria-labelledby="tituloSeccion">
+
+            <!-- header: encabezado de esta sección -->
+            <div class="encabezado-seccion">
+                <h2 class="titulo-seccion" id="tituloSeccion">Mis horas</h2>
+                <p class="descripcion">Consulta el registro y estado de tus horas sociales.</p>
+            </div>
+
+            <!-- nav: las pestañas son navegación entre vistas -->
+            <div class="pestanas" aria-label="Vistas de horas">
+                <button class="pestana activa" id="btnResumen">Resumen</button>
+                <button class="pestana" id="btnHistorial">Historial</button>
+            </div>
+
+            <!-- ==================== -->
+            <!-- PESTAÑA: RESUMEN     -->
+            <!-- ==================== -->
+            <div class="contenido-pestana" id="vistaResumen">
+
+                <!-- section: tarjeta de resumen de horas -->
+                <section class="tarjeta-resumen" aria-label="Resumen de horas acumuladas">
+                    <p class="etiqueta-horas">Total de horas</p>
+
+                    <div class="fila-horas">
+                        <span class="horas-completadas" id="horasCompletadas">20</span>
+                        <span class="separador">/</span>
+                        <span class="horas-totales" id="horasTotales">80</span>
+                        <span class="texto-horas">horas</span>
+                    </div>
+
+                    <!-- Barra de progreso -->
+                    <div class="contenedor-barra" role="progressbar"
+                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="80"
+                        aria-label="Progreso de horas sociales">
+                        <div class="barra-progreso" id="barraProgreso"></div>
+                    </div>
+                    <p class="porcentaje" id="textoPorcentaje">25%</p>
+
+                </section>
+
+                <!-- section: historial resumido -->
+                <section aria-labelledby="tituloHistorialResumen">
+                    <h3 class="subtitulo" id="tituloHistorialResumen">
+                        Historial de actividades
+                    </h3>
+
+                    <table class="tabla-actividades">
+                        <thead>
+                            <tr>
+                                <th scope="col">Proyecto</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Horas</th>
+                                <th scope="col">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTablaResumen">
+                            <!-- Las filas se generan con JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+
+            <!-- ==================== -->
+            <!-- PESTAÑA: HISTORIAL   -->
+            <!-- ==================== -->
+            <div class="contenido-pestana oculto" id="vistaHistorial">
+
+                <section aria-labelledby="tituloHistorialCompleto">
+                    <h3 class="subtitulo" id="tituloHistorialCompleto">
+                        Historial completo
+                    </h3>
+
+                    <table class="tabla-actividades">
+                        <thead>
+                            <tr>
+                                <th scope="col">Proyecto</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Horas</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Evidencia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTablaHistorial">
+                            <!-- Las filas se generan con JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/horas_estudiante.js"></script>
+    <script src="/static/js/base.js"></script>
+{% endblock %}
+
+

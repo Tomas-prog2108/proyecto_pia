@@ -1,0 +1,91 @@
+{% extends "base_profesor.html" %}
+
+{% block head %}
+  <meta charset="UTF-8">
+  <title>Gestión de proyectos</title>
+    <link rel="stylesheet" href="/static/css/gestion_proyecto.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+
+  <main class="main">
+    <div class="header">
+      <div>
+        <h1>Gestión de proyectos</h1>
+        <p>Administra los proyectos que otorgan horas sociales.</p>
+      </div>
+      <button class="btn">+ Nuevo proyecto</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="card">
+      <div class="info">
+        <div class="icon-box">📖</div>
+        <div>
+          <h3>Biblioteca</h3>
+          <p>10 horas &nbsp;&nbsp; 20 cupos</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="edit">✏️</button>
+        <button class="delete">🗑️</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="info">
+        <div class="icon-box">👥</div>
+        <div>
+          <h3>Preescolar</h3>
+          <p>15 horas &nbsp;&nbsp; 15 cupos</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="edit">✏️</button>
+        <button class="delete">🗑️</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="info">
+        <div class="icon-box">📅</div>
+        <div>
+          <h3>Eventos escolares</h3>
+          <p>5 horas &nbsp;&nbsp; 30 cupos</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="edit">✏️</button>
+        <button class="delete">🗑️</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="info">
+        <div class="icon-box">🌱</div>
+        <div>
+          <h3>Apoyo ambiental</h3>
+          <p>8 horas &nbsp;&nbsp; 25 cupos</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="edit">✏️</button>
+        <button class="delete">🗑️</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="/static/js/base.js"></script>
+{% endblock %}
+
+</body>
+</html>

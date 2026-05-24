@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    {% endblock %}
+</head>
+<body>
+    
+
+    <header class="topbar">
+
+        <nav class="nav">
+            <a class="nav_logo" href="/inicio">🎓</a>
+            <ul>
+                <il class="nav-btn" data-tip="Inicio"><a href="/inicio"><i class="fa-solid fa-house"></i></a></il>
+                <il class="nav-btn" data-tip="Proyectos"><a href="/disponibles"><i class="fa-solid fa-folder-open"></i></a></il>
+                <il class="nav-btn" data-tip="Mis Horas"><a href="/horas_es"><i class="fa-solid fa-hourglass"></i></a></il>
+            </ul>
+
+            <div class="nav-spacer"></div>
+    
+             <a class="nav-btn btn-logout" data-tip="Cerrar sesión" onclick="doLogout()" href="/"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        </nav>
+
+
+        <div class="topbar-left"></div>
+        <div class="topbar-right">
+            <span id="role-badge" class="role-badge student">Estudiante</span>
+            <button class="btn-tema" id="btn-tema">Modo claro</button>
+            <a class="notif-btn" href=""><span>🔔</span><span class="notif-dot"></span></a>
+            <div class="avatar" id="avatar-initials">JP</div>
+        </div>
+
+    </header>
+
+    {% block main %}
+    
+    {% endblock %}
+
+    <footer></footer>
+
+    {% block script %}
+    <script src="/static/js/base.js"></script>
+    {% endblock %}
+
+</body>
+</html>
