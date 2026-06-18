@@ -166,3 +166,10 @@ async def noti(request : Request):
         name="Noti_profe.html",
         request=request,
     )
+
+@app.get("/mis_proyectos", response_class=HTMLResponse)
+async def m_proyect(request : Request):
+    return templates.TemplateResponse(
+        name="mis-proyectos.html",
+        request=request,
+    )

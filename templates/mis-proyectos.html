@@ -1,0 +1,175 @@
+{% extends "base_estudiante.html" %}
+
+{% block head %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Horas Sociales – Mis Proyectos</title>
+  <link rel="stylesheet" href="/static/css/mis-proyectos.css" />
+  <link rel="stylesheet" href="/static/css/base.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+{% endblock %}
+
+{% block main %}
+    <main class="content">
+
+      <div class="page-header">
+        <h1 class="page-title">Mis proyectos</h1>
+        <p class="page-subtitle">Consulta los proyectos en los que estás inscrito y tu progreso en cada uno.</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon blue">📁</div>
+          <div>
+            <div class="stat-label">Proyectos inscritos</div>
+            <div class="stat-value">3</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon green">⏰</div>
+          <div>
+            <div class="stat-label">Horas completadas</div>
+            <div class="stat-value green">12 <span class="frac">/ 40</span></div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon amber">🕐</div>
+          <div>
+            <div class="stat-label">Horas pendientes</div>
+            <div class="stat-value amber">28</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon purple">⭐</div>
+          <div>
+            <div class="stat-label">Proyectos completados</div>
+            <div class="stat-value">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="projects-card">
+        <div class="projects-card-header">
+          <h2 class="projects-card-title">Lista de mis proyectos</h2>
+        </div>
+
+        <table class="projects-table">
+          <thead>
+            <tr>
+              <th>Proyecto</th>
+              <th>Descripción</th>
+              <th>Fecha de inicio</th>
+              <th>Horas totales</th>
+              <th>Horas obtenidas</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- Row 1 -->
+            <tr>
+              <td>
+                <div class="proj-cell">
+                  <div class="proj-icon blue-bg">📚</div>
+                  <div class="proj-name">Biblioteca</div>
+                </div>
+              </td>
+              <td><span class="proj-desc">Apoyo en la organización de libros y préstamo.</span></td>
+              <td>
+                <div class="date-cell">
+                  <span class="date-icon">📅</span> 15/05/2026
+                </div>
+              </td>
+              <td>10 horas</td>
+              <td>
+                <div class="hours-cell">
+                  <div class="hours-value">3 horas</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:30%"></div>
+                  </div>
+                  <div class="progress-pct">30%</div>
+                </div>
+              </td>
+              <td><span class="badge badge-process">En proceso</span></td>
+              <td><a class="action-link" href="#">Ver detalles ›</a></td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr>
+              <td>
+                <div class="proj-cell">
+                  <div class="proj-icon green-bg">👨‍👩‍👧</div>
+                  <div class="proj-name">Preescolar</div>
+                </div>
+              </td>
+              <td><span class="proj-desc">Colabora con actividades educativas y recreativas.</span></td>
+              <td>
+                <div class="date-cell">
+                  <span class="date-icon">📅</span> 20/05/2026
+                </div>
+              </td>
+              <td>15 horas</td>
+              <td>
+                <div class="hours-cell">
+                  <div class="hours-value">7 horas</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:47%"></div>
+                  </div>
+                  <div class="progress-pct">47%</div>
+                </div>
+              </td>
+              <td><span class="badge badge-process">En proceso</span></td>
+              <td><a class="action-link" href="#">Ver detalles ›</a></td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr>
+              <td>
+                <div class="proj-cell">
+                  <div class="proj-icon purple-bg">⭐</div>
+                  <div class="proj-name">Eventos escolares</div>
+                </div>
+              </td>
+              <td><span class="proj-desc">Apoya en la logística y organización de eventos.</span></td>
+              <td>
+                <div class="date-cell">
+                  <span class="date-icon">📅</span> 01/06/2026
+                </div>
+              </td>
+              <td>15 horas</td>
+              <td>
+                <div class="hours-cell">
+                  <div class="hours-value">2 horas</div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:13%"></div>
+                  </div>
+                  <div class="progress-pct">13%</div>
+                </div>
+              </td>
+              <td><span class="badge badge-pending">Pendiente</span></td>
+              <td><a class="action-link" href="#">Ver detalles ›</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Notice -->
+      <div class="notice">
+        <span class="notice-icon">ℹ️</span>
+        Cuando el profesor registre tus horas, se actualizarán automáticamente en el seguimiento.
+      </div>
+
+{% endblock %}
+
+{% block script %}
+<script src="/static/js/base.js"></script>
+{% endblock %}
+
+
+</body>
+</html>
