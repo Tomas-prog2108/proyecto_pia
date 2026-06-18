@@ -15,3 +15,9 @@ botones.forEach(boton => {
     }, 3000);
   });
 });
+
+document.querySelectorAll(".btn-ins").forEach(boton => {
+  boton.addEventListener("click", () => {
+    boton.textContent = "Inscrito ✓";
+  });
+});

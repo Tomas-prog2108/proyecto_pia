@@ -102,6 +102,10 @@ button:hover {
     background-color: var(--btn-hover);
 }
 
+button:active{
+    background-color: #8c8c8c;
+}
+
 
 a{
     text-decoration: none;
