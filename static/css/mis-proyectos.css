@@ -199,6 +199,9 @@ body {
 /* ── Content ── */
 .content {
   padding: 32px 32px 48px;
+    margin-top: 4rem;
+    margin-left: 5rem;
+    margin-right: 2rem;
 }
 
 .page-header { margin-bottom: 28px; }
