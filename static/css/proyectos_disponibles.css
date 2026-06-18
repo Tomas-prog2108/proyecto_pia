@@ -120,3 +120,34 @@ a{
     opacity: 1;
     transform: translateY(0);
 }
+
+#snackbar {
+  visibility: hidden;
+  min-width: 280px;
+  background-color: #323232;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px 20px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+}
+
+#snackbar.show {
+  visibility: visible;
+  animation: fadein 0.3s, fadeout 0.3s 2.7s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; bottom: 0; }
+  to { opacity: 1; bottom: 20px; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; bottom: 20px; }
+  to { opacity: 0; bottom: 0; }
+}
